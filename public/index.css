@@ -1,0 +1,11 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    border: 1px solid gray;
+}
+
