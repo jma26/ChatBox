@@ -1,10 +1,14 @@
-const app = require("express")();
-const http = require("http").Server(app);
+const express = require("express");
+
+const app = express(); 
+
+// Serve static files css, js, or images
+app.use(express.static("public"));
 
 app.get('/', function(request, response) {
-    response.send("<h1> Hello John Wick! </h1>");
+    response.sendFile(__dirname + '/index.html');
 });
 
-http.listen(8000, function() {
+app.listen(8000, function() {
     console.log("Server is listening on port 8000");
 })
