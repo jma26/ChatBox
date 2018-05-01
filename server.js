@@ -20,7 +20,7 @@ io.sockets.on("connection", function(socket) {
     // Receive chat mesasge
     socket.on("chat message", function(message) {
         console.log("Message is: ", message);
-        // io - Broadcast chat message 
+        // io - Broadcast chat message to all
         io.emit("broadcast message", message);
     });
     // Fire disconnect

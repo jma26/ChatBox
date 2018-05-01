@@ -16,7 +16,14 @@
     background-color: #2E4054;
 }
 
+.chatbox {
+    width: 100%;
+    height: 91.5%;
+    overflow: auto;
+}
+
 form {
+    display: block;
     position: absolute;
     bottom: 0px;
     width: 100%;
@@ -37,6 +44,7 @@ form button {
 
 #chat {
     list-style-type: none;
+    overflow: auto;
 }
 
 #chat li {
