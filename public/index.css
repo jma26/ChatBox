@@ -3,9 +3,26 @@
     padding: 0px;
 }
 
+.headline {
+    text-align: center;
+}
+
 .container {
+    position: relative;
+    margin: 0 auto;
     width: 500px;
     height: 500px;
     border: 1px solid gray;
 }
+
+form {
+    position: absolute;
+    bottom: 0px;
+}
+
+#message {
+    list-style-type: none;
+}
+
+
 
