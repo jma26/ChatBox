@@ -18,6 +18,20 @@
 form {
     position: absolute;
     bottom: 0px;
+    width: 100%;
+    border: 1px solid blue;
+}
+
+form input {
+    border: 0px;
+    width: 84%;
+    padding: 10px;
+    border: 2px solid green;
+}
+
+form button {
+    width: 10.4%;
+    padding: 10px;
 }
 
 #message {
