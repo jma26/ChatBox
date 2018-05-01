@@ -12,30 +12,36 @@
     margin: 0 auto;
     width: 500px;
     height: 500px;
-    border: 1px solid gray;
+    border: 1px solid #6000aa;
+    background-color: #2E4054;
 }
 
 form {
     position: absolute;
     bottom: 0px;
     width: 100%;
-    border: 1px solid blue;
 }
 
 form input {
     border: 0px;
     width: 84%;
     padding: 10px;
-    border: 2px solid green;
+    border: 2px solid #090F12;
 }
 
 form button {
     width: 10.4%;
     padding: 10px;
+    border: 2px solid 090F12;
 }
 
 #chat {
     list-style-type: none;
+}
+
+#chat li {
+    padding: 5px;
+    color: white;
 }
 
 

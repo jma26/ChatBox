@@ -19,15 +19,18 @@
         </form>
     </div>
     <script>
-        $(function() {
-            var socket = io();
-            $("form").submit(function() {
-                socket.emit("chat message", $("#message").val());
-                $("#message").val("");
-                event.preventDefault();
-            });
-
+        var socket = io();
+        // Emit chat message
+        $("form").submit(function() {
+            socket.emit("chat message", $("#message").val());
+            $("#message").val("");
+            event.preventDefault();
         });
+        // Receive broadcast message
+        socket.on("broadcast message", function(message) {
+            $("#chat").append($("<li>").text(message));
+        });
+
     </script>
 </body>
 </html>
