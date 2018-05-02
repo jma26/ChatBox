@@ -1,15 +1,33 @@
+const bodyParser = require("body-parser");
 const express = require("express");
 const app = express(); 
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: false // False- Does not allow nested objects**
+}));
+
+app.use(express.json());
+app.use(express.urlencoded({
+    extended: false
+}));
 
 // Serve static files css, js, or images
 app.use(express.static("public"));
 
-// User login info
-app.get('/login', function(request, response) {
+// Get login html
+app.get('/', function(request, response) {
     response.sendFile(__dirname + "/login.html");
 })
-// Default rout to send chat window
-app.get('/', function(request, response) {
+
+// Post user login & redirect
+app.post('/userLogin', function(request, response) {
+    var user = request.body.user;
+    response.redirect('/chat/' + user);
+})
+
+// Get index html (chat)
+app.get('/chat/:user', function(request, response) {
     response.sendFile(__dirname + "/index.html");
 });
 
