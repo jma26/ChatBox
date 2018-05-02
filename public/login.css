@@ -2,3 +2,26 @@
     margin: 0px;
     padding: 0px;
 }
+
+#headline {
+    text-align: center;
+    font-size: 50px;
+}
+
+#subheadline {
+    font-size: 50px;
+    text-align: center;
+}
+
+form {
+    margin-top: 25px;
+    text-align: center;
+}
+
+form input {
+    padding: 10px;
+}
+
+form button {
+    padding: 10px;
+}

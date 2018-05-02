@@ -12,7 +12,7 @@
     margin: 0 auto;
     width: 500px;
     height: 500px;
-    border: 1px solid #6000aa;
+    border: 1px solid #090F12;
     background-color: #2E4054;
 }
 
@@ -33,13 +33,13 @@ form input {
     border: 0px;
     width: 84%;
     padding: 10px;
-    border: 2px solid #090F12;
+    border: 1px solid #090F12;
 }
 
 form button {
-    width: 10.4%;
+    width: 10.8%;
     padding: 10px;
-    border: 2px solid 090F12;
+    border: 1px solid #090F12;
 }
 
 #chat {
