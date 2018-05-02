@@ -4,9 +4,13 @@ const app = express();
 // Serve static files css, js, or images
 app.use(express.static("public"));
 
-// Default route to send
+// User login info
+app.get('/login', function(request, response) {
+    response.sendFile(__dirname + "/login.html");
+})
+// Default rout to send chat window
 app.get('/', function(request, response) {
-    response.sendFile(__dirname + '/index.html');
+    response.sendFile(__dirname + "/index.html");
 });
 
 // Server port
