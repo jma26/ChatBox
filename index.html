@@ -32,6 +32,10 @@
         socket.on("broadcast message", function(message) {
             $("#chat").append($("<li>").text(message));
         });
+        // Receive new user announcement
+        socket.on("new user", function(user) {
+            $("#chat").append($("<li>").text(`Welcome to the chatroom, ${user}!`));
+        })
 
     </script>
 </body>

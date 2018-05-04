@@ -12,6 +12,8 @@ app.use(express.urlencoded({
     extended: false
 }));
 
+var user;
+
 // Serve static files css, js, or images
 app.use(express.static("public"));
 
@@ -22,12 +24,13 @@ app.get('/', function(request, response) {
 
 // Post user login & redirect
 app.post('/userLogin', function(request, response) {
-    var user = request.body.user;
-    response.redirect('/chat/' + user);
+    var login = request.body.user;
+    response.redirect('/chatbox/' + login);
 })
 
 // Get index html (chat)
-app.get('/chat/:user', function(request, response) {
+app.get('/chatbox/:user', function(request, response) {
+    user = request.params.user;
     response.sendFile(__dirname + "/index.html");
 });
 
@@ -39,6 +42,8 @@ const io = require("socket.io").listen(server);
 
 io.sockets.on("connection", function(socket) {
     console.log("User connected!");
+    // Fire new user announcement to all except the logging user
+    socket.broadcast.emit("new user", user);
     // Receive chat mesasge
     socket.on("chat message", function(message) {
         console.log("Message is: ", message);
