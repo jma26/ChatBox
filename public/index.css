@@ -35,7 +35,7 @@ form {
 
 form input {
     border: 0px;
-    width: 67.8%;
+    width: 67.3%;
     padding: 10px;
     border: 1px solid #090F12;
 }
@@ -63,8 +63,19 @@ form button {
     height: 600px;
 }
 
-#users {
+.users-container h2 {
     color: #E39B84;
+    padding: 5px 10px;
+}
+
+#users {
+    list-style-type: none;
+    overflow: auto;
+    color: white;
+}
+
+#users li {
+    padding: 5px 10px;
 }
 
 
