@@ -13,7 +13,8 @@
     <h1 class="headline"> Welcome to ChatBox </h1>
     <div class="container">
         <div class="users-container">
-            <h2 id="users"> Users </h2>
+            <h2> Users </h2>
+            <ul id="users"> </ul>
         </div>
         <div class="chat-container">
             <div class="chatbox">
@@ -26,6 +27,7 @@
         </div>
     </div>
     <script>
+        var userArr = [];
         var socket = io();
         // Emit chat message
         $("form").submit(function() {
@@ -40,7 +42,16 @@
         // Receive new user announcement
         socket.on("new user", function(user) {
             $("#chat").append($("<li>").text(`Welcome to the chatroom, ${user}!`));
-        })
+        });
+        // Receive user for chatroom users
+        socket.on("users", function(users) {
+            console.log(users);
+            var text = "";
+            users.forEach(function(user) {
+                text += "<li>" + user + "</li>";
+            });
+            $("#users").html(text);
+        });
 
     </script>
 </body>
