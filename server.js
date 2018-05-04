@@ -13,6 +13,7 @@ app.use(express.urlencoded({
 }));
 
 var user;
+var users = [];
 
 // Serve static files css, js, or images
 app.use(express.static("public"));
@@ -31,6 +32,7 @@ app.post('/userLogin', function(request, response) {
 // Get index html (chat)
 app.get('/chatbox/:user', function(request, response) {
     user = request.params.user;
+    users.push(user);
     response.sendFile(__dirname + "/index.html");
 });
 
@@ -42,6 +44,8 @@ const io = require("socket.io").listen(server);
 
 io.sockets.on("connection", function(socket) {
     console.log("User connected!");
+    // Send user to chatroom users for all
+    io.emit("users", users);
     // Fire new user announcement to all except the logging user
     socket.broadcast.emit("new user", user);
     // Receive chat mesasge
@@ -53,5 +57,9 @@ io.sockets.on("connection", function(socket) {
     // Fire disconnect
     socket.on("disconnect", function() {
         console.log("User disconnected!");
+        var index = users.indexOf(user);
+        users.splice(index, 1);
+        // Update disconnected user users in chatroom users for all
+        io.emit("users", users);
     })
 })
