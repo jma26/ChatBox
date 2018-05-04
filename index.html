@@ -12,13 +12,18 @@
 <body>
     <h1 class="headline"> Welcome to ChatBox </h1>
     <div class="container">
-        <div class="chatbox">
-            <ul id="chat"> </ul>
+        <div class="users-container">
+            <h2 id="users"> Users </h2>
         </div>
-        <form>
-            <input id="message" type="text" placeholder="Your message...">
-            <button> Send </button>
-        </form>
+        <div class="chat-container">
+            <div class="chatbox">
+                <ul id="chat"> </ul>
+            </div>
+            <form>
+                <input id="message" type="text" placeholder="Your message...">
+                <button> Send </button>
+            </form>
+        </div>
     </div>
     <script>
         var socket = io();

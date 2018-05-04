@@ -7,21 +7,25 @@
     text-align: center;
 }
 
+/* Outer container responsible for flexbox */
 .container {
+    display: flex;
     position: relative;
     margin: 0 auto;
-    width: 500px;
-    height: 500px;
+    width: 800px;
+    height: 600px;
     border: 1px solid #090F12;
     background-color: #2E4054;
 }
 
+/* Chatbox */
 .chatbox {
-    width: 100%;
-    height: 91.5%;
+    width: 650px;
+    height: 93.2%;
     overflow: auto;
 }
 
+/* Form */
 form {
     display: block;
     position: absolute;
@@ -31,7 +35,7 @@ form {
 
 form input {
     border: 0px;
-    width: 84%;
+    width: 67.8%;
     padding: 10px;
     border: 1px solid #090F12;
 }
@@ -50,6 +54,17 @@ form button {
 #chat li {
     padding: 5px;
     color: white;
+}
+
+/* Current users */
+.users-container {
+    border: 1px solid #D58652;
+    width: 100%;
+    height: 600px;
+}
+
+#users {
+    color: #E39B84;
 }
 
 
